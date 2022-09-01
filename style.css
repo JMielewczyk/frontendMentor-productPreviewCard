@@ -11,22 +11,27 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: hsl(30, 38%, 92%);
+    overflow: hidden;
 }
 
 section {
     display: flex;
     flex-direction: column;
     max-width: 340px;
-    min-width: 200px;
+    min-width: 340px;
     height: 600px;
     border-radius: 15px;
     background-color: hsl(0, 0%, 100%)
 }
 
-img.perfum {
+img.perfumMobile {
     width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+}
+
+img.perfumDesktop {
+    display: none;
 }
 
 h1 {
@@ -91,6 +96,10 @@ button {
 
 }
 
+button:hover {
+   background-color: hsl(158, 36%, 25%);
+}
+
 img.cart {
     position: absolute;
     top: 47%;
@@ -98,18 +107,67 @@ img.cart {
     transform: translateY(-50%);
 }
 
+div.attribution {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
 
-
-
-
-
-
-
-.attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
+    div.attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+@media (min-width: 600px) {
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 600px;
+    height: 450px;
+}
+
+img.perfumMobile {
+    display: none;
+}
+
+img.perfumDesktop {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: none;
+    border-bottom-left-radius: 15px;
+}
+
+h1 {
+    margin-top: 20px;
+}
+h2 {
+    margin-top: 5px;
+}
+
+p.text {
+    margin-top: 30px;
+}
+
+span.actualPrice {
+    font-size: 32px;
+
+}
+div.price {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+button {
+    margin-top: 30px;
+}
+
+img.cart {
+    left: 25%;
+}
+}
